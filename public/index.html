@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <title>Battery pack builder</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <h1>Battery Pack Builder 1.0</h1>
+    <p>Welcome Battery pack builder, please input cell capacities first</p>
+    <ol id="creatingDOMelement"></ol>
+    <ol id="creatingDOMelement2"></ol>
+
+    <button id="getPack" class="button" type="button">
+      get all your batteries ↻
+    </button>
+    <button id="deletePack" type="button">delete your pack</button
+    ><br /><br /><br /><br />
+
+    <form id="packsize">
+      <input type="radio" id="1S" name="packSize" value="1" />
+      <label for="1S">1S</label><br />
+      <input type="radio" id="2S" name="packSize" value="2" />
+      <label for="2S">2S</label><br />
+      <input type="radio" id="3S" name="packSize" value="3" />
+      <label for="3S">3S</label><br /><br />
+      <input type="submit" id="getYourPack" value="get your pack ↻" />
+    </form>
+
+    <form id="submitform">
+      <label for="Cell1">Cell1(in mha):</label><br />
+      <input type="number" id="Cell1" name="capacity" /><br />
+      <label for="Cell2">Cell2(in mha):</label><br />
+      <input type="number" id="Cell2" name="capacity" /><br />
+      <label for="Cell3">Cell3(in mha):</label><br />
+      <input type="number" id="Cell3" name="capacity" /><br />
+      <label for="Cell4">Cell4(in mha):</label><br />
+      <input type="number" id="Cell4" name="capacity" /><br />
+      <label for="Cell5">Cell5(in mha):</label><br />
+      <input type="number" id="Cell5" name="capacity" /><br />
+      <label for="Cell6">Cell6(in mha):</label><br />
+      <input type="number" id="Cell6" name="capacity" /><br />
+      <label for="Cell7">Cell7(in mha):</label><br />
+      <input type="number" id="Cell7" name="capacity" /><br />
+      <label for="Cell8">Cell8(in mha):</label><br />
+      <input type="number" id="Cell8" name="capacity" /><br />
+      <label for="Cell9">Cell9(in mha):</label><br />
+      <input type="number" id="Cell9" name="capacity" /><br />
+      <label for="Cell10">Cell10(in mha):</label><br />
+      <input type="number" id="Cell10" name="capacity" /><br /><br />
+      <input
+        type="submit"
+        id="submitYourPackButton"
+        value="Submit your capacities"
+      />
+    </form>
+
+    <script src="./js/front.js"></script>
+  </body>
+</html>

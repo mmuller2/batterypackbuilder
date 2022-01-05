@@ -1,0 +1,25 @@
+body {
+  background-image: url('../images/teslacell2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  /*background: linear-gradient(to right, rgb(208, 216, 216), rgb(136, 139, 187));*/
+  padding: 50px;
+  font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  color: rgb(0, 17, 255);
+}
+
+h1 {
+  text-align: center;
+}
+
+ol {
+  text-align: left;
+}
+
+li {
+  text-align: left;
+}
+a {
+  color: #00b7ff;
+}
