@@ -4,15 +4,28 @@ const url = 'http://localhost:3000';
 const getBatteries = document.querySelector('#getPack');
 const creatingDOMelement = document.querySelector('#creatingDOMelement');
 getBatteries.addEventListener('click', getAll);
+
 //delete your pack events
 const deletePack = document.querySelector('#deletePack');
 deletePack.addEventListener('click', deleteAll);
+
 //add a new table
 const addTable = document.querySelector('#submitYourPack');
-// get ideal Pack events
-// const getIdealPack = document.querySelector('#getYourPack');
+const form = document.querySelector('#submitform');
+form.addEventListener('submit', handlerForm);
+
+// get picked Pack events (16.1.22)
+const getIdealPack = document.querySelector('#three');
+console.log(getIdealPack);
 // const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
-// getIdealPack.addEventListener('click', getAll);
+getIdealPack.addEventListener('click', getIdeal);
+
+// get picked Pack functions
+async function getIdeal() {
+  const response = await fetch(`${url}/batteries/ideal/${getIdealPack.value}`);
+  const { payload } = await response.json();
+  console.log(payload);
+}
 
 // get all batteries functions
 //gets the info from /batteries
@@ -76,6 +89,3 @@ async function fetchCreate(body) {
   console.log(response);
   return response;
 }
-
-const form = document.querySelector('#submitform');
-form.addEventListener('submit', handlerForm);

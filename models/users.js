@@ -78,11 +78,14 @@ export async function get4Best() {
 }
 
 //3s
-export async function get3Best() {
-  const best3 = await query(`SELECT * 
+export async function get3Best(num) {
+  const best3 = await query(
+    `SELECT * 
   FROM batteries 
  ORDER BY capacity DESC  
- LIMIT 3`);
+ LIMIT $1`,
+    [Number(num)]
+  );
   return best3.rows;
 }
 

@@ -33,10 +33,16 @@ router.get('/', async function (req, res) {
 });
 
 // get picked pack (16.1.22)
-router.get('/', async function (req, res) {
+router.get('/ideal/:id', async function (req, res) {
+  const { id } = req.params;
+  console.log(id);
   // call the function to get certain pack
-  const pickedPack = await get3Best;
-  res.json({ success: true, message: `Here is your 3S pack`, payload: result });
+  const pickedPack = await get3Best(id);
+  res.json({
+    success: true,
+    message: `Here is your pack`,
+    payload: pickedPack,
+  });
 });
 
 // GET battery by id
