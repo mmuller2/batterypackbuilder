@@ -32,6 +32,13 @@ router.get('/', async function (req, res) {
   res.json({ success: true, message: `All batteries`, payload: result });
 });
 
+// get picked pack (16.1.22)
+router.get('/', async function (req, res) {
+  // call the function to get certain pack
+  const pickedPack = await get3Best;
+  res.json({ success: true, message: `Here is your 3S pack`, payload: result });
+});
+
 // GET battery by id
 router.get('/:id', async function (req, res) {
   const { id } = req.params;

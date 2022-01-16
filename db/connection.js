@@ -2,10 +2,10 @@ import pg from 'pg';
 
 // sql server info
 const pool = new pg.Pool({
-  user: 'vljmxocvdveugv',
-  host: 'ec2-63-34-223-144.eu-west-1.compute.amazonaws.com',
-  database: 'db31a6uq9bpnnu',
-  password: '3848e5db3df5a4a8a0528576c58ab11b806070d95e9bcd3e426899b234389d66',
+  user: 'wcyrnynjfdpyal',
+  host: 'ec2-79-125-93-182.eu-west-1.compute.amazonaws.com',
+  database: 'dcdjvl07s55qvt',
+  password: 'f29514f117399789ae371a1da30d0d7505933857eced3b929e346fe9b1c13223',
   port: 5432,
   ssl: { rejectUnauthorized: false },
 });
