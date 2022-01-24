@@ -4,6 +4,13 @@ const url = 'http://localhost:3000';
 const getBatteries = document.querySelector('#getPack');
 const creatingDOMelement = document.querySelector('#creatingDOMelement');
 getBatteries.addEventListener('click', getAll);
+// creates the pack info element space in the dom (get all batteries)
+function hello(id, capacity) {
+  const list = document.createElement('li');
+  list.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
+  creatingDOMelement.appendChild(list);
+  console.log('get all batteries button pressed');
+}
 
 //delete your pack events
 const deletePack = document.querySelector('#deletePack');
@@ -14,9 +21,19 @@ const addTable = document.querySelector('#submitYourPack');
 const form = document.querySelector('#submitform');
 form.addEventListener('submit', handlerForm);
 
+// creating element space in the DOM for get picked pack (24/01/22)
+function pickedSpot(id, capacity) {
+  const pickedlist = document.createElement('li');
+  pickedlist.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
+  creatingDOMelement2.appendChild(pickedlist);
+
+  console.log('get best pack button pressed');
+}
+
 // get picked Pack events (16.1.22)
 const getIdealPack = document.querySelector('#three');
 console.log(getIdealPack);
+const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
 // const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
 getIdealPack.addEventListener('click', getIdeal);
 
@@ -25,6 +42,10 @@ async function getIdeal() {
   const response = await fetch(`${url}/batteries/ideal/${getIdealPack.value}`);
   const { payload } = await response.json();
   console.log(payload);
+  //adds and maps through the new pack (array) and sends it to the dom
+  const pickedArr = payload.map((input) => {
+    pickedSpot(input.id, input.capacity);
+  });
 }
 
 // get all batteries functions
@@ -36,15 +57,6 @@ async function getAll() {
   const newArr = payload.map((input) => {
     hello(input.id, input.capacity);
   });
-}
-
-// creates the pack info element space in the dom
-function hello(id, capacity) {
-  const list = document.createElement('li');
-  list.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
-  creatingDOMelement.appendChild(list);
-
-  console.log('get all batteries button pressed');
 }
 
 //delete your pack functions
