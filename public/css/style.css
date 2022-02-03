@@ -23,3 +23,20 @@ li {
 a {
   color: #00b7ff;
 }
+
+/* .div-1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding: 10px;
+} */
+
+.div1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 40px 0;
+}
