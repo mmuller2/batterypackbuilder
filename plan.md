@@ -8,8 +8,8 @@ Install pertinent dependencies:
 - npm i --save-dev nodemon
   (nodemon, tool that helps develop node.js based applications by automatically restarting the node application when file changes in the directory are detected)
 
-General idea:
--To create a lithium battery pack calculator based on cell capacity and if possible IR
+> General idea:
+> -To create a lithium battery pack calculator based on cell capacity and if possible IR
 
 - This will be based on Lithium polimer batteries;
   Nominal voltage per cell = 3.7v

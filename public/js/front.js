@@ -4,6 +4,7 @@ const url = 'http://localhost:3000';
 const getBatteries = document.querySelector('#getPack');
 const creatingDOMelement = document.querySelector('#creatingDOMelement');
 getBatteries.addEventListener('click', getAll);
+//
 // creates the pack info element space in the dom (get all batteries)
 function hello(id, capacity) {
   const list = document.createElement('li');
@@ -11,25 +12,24 @@ function hello(id, capacity) {
   creatingDOMelement.appendChild(list);
   console.log('get all batteries button pressed');
 }
-
+//
 //delete your pack events
 const deletePack = document.querySelector('#deletePack');
 deletePack.addEventListener('click', deleteAll);
-
+//
 //add a new table
 const addTable = document.querySelector('#submitYourPack');
 const form = document.querySelector('#submitform');
 form.addEventListener('submit', handlerForm);
-
+//
 // creating element space in the DOM for get picked pack (24/01/22)
 function pickedSpot(id, capacity) {
   const pickedlist = document.createElement('li');
   pickedlist.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
   creatingDOMelement2.appendChild(pickedlist);
-
   console.log('get best pack button pressed');
 }
-
+//
 // get picked Pack events (16.1.22)
 const getIdealPack = document.querySelector('#three');
 console.log(getIdealPack);
