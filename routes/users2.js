@@ -17,7 +17,7 @@ import {
   get6Best,
   get5Best,
   get4Best,
-  get3Best,
+  getBest,
   get2Best,
   get1Best,
   deleteTable,
@@ -31,20 +31,22 @@ router.get('/', async function (req, res) {
   //response
   res.json({ success: true, message: `All batteries`, payload: result });
 });
-
+//
+//
 // get picked pack (16.1.22)
 router.get('/ideal/:id', async function (req, res) {
   const { id } = req.params;
   console.log(id);
   // call the function to get certain pack
-  const pickedPack = await get3Best(id);
+  const pickedPack = await getBest(id);
   res.json({
     success: true,
     message: `Here is your pack`,
     payload: pickedPack,
   });
 });
-
+//
+//
 // GET battery by id
 router.get('/:id', async function (req, res) {
   const { id } = req.params;
@@ -55,13 +57,15 @@ router.get('/:id', async function (req, res) {
     payload: requestedBattery,
   });
 });
-
+//
+//
 // Delete battery database
 router.delete('/', async function (req, res) {
   const deleted = await deleteTable();
   return res.json({ redirect: 'http://localhost:3000' });
 });
-
+//
+//
 //POST  to database with new cells
 router.post('/', async function (req, res) {
   const newTableBody = req.body;

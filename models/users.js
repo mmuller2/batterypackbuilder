@@ -13,6 +13,37 @@ export async function getBatteriesById(id) {
   return dataId.rows;
 }
 
+//get best pack (number)
+export async function getBest(num) {
+  const best3 = await query(
+    `SELECT * 
+  FROM batteries 
+ ORDER BY capacity DESC  
+ LIMIT $1`,
+    [Number(num)]
+  );
+  return best3.rows;
+}
+
+// add to table
+export async function addTable(insert) {
+  const item = insert.capacity;
+  console.log(item);
+  const added = await query(
+    `INSERT INTO batteries(capacity) VALUES ($1) RETURNING *;`,
+    [item]
+  );
+  return added.rows;
+}
+
+// erase contents of the table
+export async function deleteTable() {
+  const deleted = await query(
+    `TRUNCATE TABLE batteries RESTART IDENTITY CASCADE;`
+  );
+  return deleted.rows;
+}
+
 // get bigger capacity numbers
 //10s
 export async function get10Best(limit) {
@@ -77,18 +108,6 @@ export async function get4Best() {
   return best4.rows;
 }
 
-//3s
-export async function get3Best(num) {
-  const best3 = await query(
-    `SELECT * 
-  FROM batteries 
- ORDER BY capacity DESC  
- LIMIT $1`,
-    [Number(num)]
-  );
-  return best3.rows;
-}
-
 //2s
 export async function get2Best() {
   const best2 = await query(`SELECT * 
@@ -105,22 +124,4 @@ export async function get1Best() {
  ORDER BY capacity DESC  
  LIMIT 1`);
   return best1.rows;
-}
-// erase contents of the table
-export async function deleteTable() {
-  const deleted = await query(
-    `TRUNCATE TABLE batteries RESTART IDENTITY CASCADE;`
-  );
-  return deleted.rows;
-}
-
-// add to table
-export async function addTable(insert) {
-  const item = insert.capacity;
-  console.log(item);
-  const added = await query(
-    `INSERT INTO batteries(capacity) VALUES ($1) RETURNING *;`,
-    [item]
-  );
-  return added.rows;
 }
