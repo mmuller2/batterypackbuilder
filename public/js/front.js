@@ -1,16 +1,27 @@
 const url = 'http://localhost:3000';
 
-//get all batteries events
+//DOM manipulation
 const getBatteries = document.querySelector('#getPack');
 const creatingDOMelement = document.querySelector('#creatingDOMelement');
+const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
+const getIdealPack = document.querySelector('#three');
+const inputValue = document.querySelector('#inputValue');
 getBatteries.addEventListener('click', getAll);
+getIdealPack.addEventListener('click', getIdeal);
 //
-// creates the pack info element space in the dom (get all batteries)
+// creates element space in the DOM (get all batteries)
 function hello(id, capacity) {
   const list = document.createElement('li');
   list.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
   creatingDOMelement.appendChild(list);
   console.log('get all batteries button pressed');
+}
+// creates element space in the DOM for get picked pack (24/01/22)
+function pickedSpot(id, capacity) {
+  const pickedlist = document.createElement('li');
+  pickedlist.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
+  creatingDOMelement2.appendChild(pickedlist);
+  console.log('get best pack button pressed');
 }
 //
 //delete your pack events
@@ -21,25 +32,16 @@ deletePack.addEventListener('click', deleteAll);
 const addTable = document.querySelector('#submitYourPack');
 const form = document.querySelector('#submitform');
 form.addEventListener('submit', handlerForm);
-//
-// creating element space in the DOM for get picked pack (24/01/22)
-function pickedSpot(id, capacity) {
-  const pickedlist = document.createElement('li');
-  pickedlist.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
-  creatingDOMelement2.appendChild(pickedlist);
-  console.log('get best pack button pressed');
-}
-//
-// get picked Pack events (16.1.22)
-const getIdealPack = document.querySelector('#three');
-console.log(getIdealPack);
-const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
-// const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
-getIdealPack.addEventListener('click', getIdeal);
 
 // get picked Pack functions
 async function getIdeal() {
-  const response = await fetch(`${url}/batteries/ideal/${getIdealPack.value}`);
+  // destroy container so it updates pack everytime the button is clicked
+  // const containerDiv = document.querySelector('#div2');
+  // const container = document.querySelector('#creatingDOMelement2');
+  // containerDiv.remove(container);
+  // containerDiv.createElement('ol');
+  //above creates the container
+  const response = await fetch(`${url}/batteries/ideal/${inputValue.value}`);
   const { payload } = await response.json();
   console.log(payload);
   //adds and maps through the new pack (array) and sends it to the dom

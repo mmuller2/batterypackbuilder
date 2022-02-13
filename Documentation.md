@@ -7,3 +7,6 @@ To locally run please use
 NPM run dev
 
 http://localhost:3000/
+
+Installed pacckages
+Chris express

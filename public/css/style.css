@@ -1,10 +1,10 @@
 body {
-  background-image: url('../images/teslacell2.jpg');
+  background-image: url('../images/thomas-kelley-xVptEZzgVfo-unsplash\ \(1\).jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
   /*background: linear-gradient(to right, rgb(208, 216, 216), rgb(136, 139, 187));*/
-  padding: 50px;
+  padding: 100px;
   font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: rgb(0, 17, 255);
 }
@@ -13,9 +13,9 @@ h1 {
   text-align: center;
 }
 
-ol {
+/* ol {
   text-align: left;
-}
+} */
 
 li {
   text-align: left;
@@ -24,13 +24,12 @@ a {
   color: #00b7ff;
 }
 
-/* .div-1 {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
+.grid-container {
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  background-color: #2196f3;
   padding: 10px;
-} */
+}
 
 .div1 {
   display: flex;
