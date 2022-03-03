@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
+  /* padding: 4rem 0; */
   /*background: linear-gradient(to right, rgb(208, 216, 216), rgb(136, 139, 187));*/
   padding: 100px;
   font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
@@ -24,12 +25,40 @@ a {
   color: #00b7ff;
 }
 
-.grid-container {
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1024px;
+}
+
+.card {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  color: #171edd;
+  border-color: #452fbe;
+}
+
+/* .grid-container {
   display: inline-grid;
   grid-template-columns: auto auto auto;
   background-color: #2196f3;
   padding: 10px;
-}
+} */
 
 .div1 {
   display: flex;
