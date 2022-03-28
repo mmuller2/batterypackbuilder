@@ -6,7 +6,7 @@
 
   <body>
     <h1 class="header">Battery Pack Builder 1.0</h1>
-    <p class="p">
+    <p class="paragraph">
       Welcome Battery pack builder, please input cell capacities first
     </p>
 
@@ -15,45 +15,53 @@
     <div class="pack3">stuff</div>
 
     <div class="control">
-      <button id="getPack" class="myButton" type="button">
-        get all your batteries ↻
-      </button>
-      <button id="deletePack" class="myButton" type="button">
-        delete your pack</button
-      ><br /><br /><br /><br />
+      <div class="showAll">
+        <button id="getPack" class="myButton" type="button">
+          get all your batteries ↻
+        </button>
+      </div>
 
-      <input type="number" id="inputValue" />
-      <button id="three" class="myButton" type="button">
-        Best cells for your pack
-      </button>
+      <div class="delete">
+        <button id="deletePack" class="myButton" type="button">
+          delete your pack
+        </button>
+      </div>
 
-      <form id="submitform">
-        <label for="Cell1">Cell1(in mha):</label><br />
-        <input type="number" id="Cell1" name="capacity" /><br />
-        <label for="Cell2">Cell2(in mha):</label><br />
-        <input type="number" id="Cell2" name="capacity" /><br />
-        <label for="Cell3">Cell3(in mha):</label><br />
-        <input type="number" id="Cell3" name="capacity" /><br />
-        <label for="Cell4">Cell4(in mha):</label><br />
-        <input type="number" id="Cell4" name="capacity" /><br />
-        <label for="Cell5">Cell5(in mha):</label><br />
-        <input type="number" id="Cell5" name="capacity" /><br />
-        <label for="Cell6">Cell6(in mha):</label><br />
-        <input type="number" id="Cell6" name="capacity" /><br />
-        <label for="Cell7">Cell7(in mha):</label><br />
-        <input type="number" id="Cell7" name="capacity" /><br />
-        <label for="Cell8">Cell8(in mha):</label><br />
-        <input type="number" id="Cell8" name="capacity" /><br />
-        <label for="Cell9">Cell9(in mha):</label><br />
-        <input type="number" id="Cell9" name="capacity" /><br />
-        <label for="Cell10">Cell10(in mha):</label><br />
-        <input type="number" id="Cell10" name="capacity" /><br /><br />
-        <input
-          type="submit"
-          id="submitYourPackButton"
-          value="Submit your capacities"
-        />
-      </form>
+      <div class="bestPack">
+        <input type="number" id="inputValue" />
+        <button id="three" class="myButton" type="button">
+          Best cells for your pack
+        </button>
+      </div>
+      <div class="submitPack">
+        <form id="submitform">
+          <label for="Cell1">Cell1(in mha):</label><br />
+          <input type="number" id="Cell1" name="capacity" /><br />
+          <label for="Cell2">Cell2(in mha):</label><br />
+          <input type="number" id="Cell2" name="capacity" /><br />
+          <label for="Cell3">Cell3(in mha):</label><br />
+          <input type="number" id="Cell3" name="capacity" /><br />
+          <label for="Cell4">Cell4(in mha):</label><br />
+          <input type="number" id="Cell4" name="capacity" /><br />
+          <label for="Cell5">Cell5(in mha):</label><br />
+          <input type="number" id="Cell5" name="capacity" /><br />
+          <label for="Cell6">Cell6(in mha):</label><br />
+          <input type="number" id="Cell6" name="capacity" /><br />
+          <label for="Cell7">Cell7(in mha):</label><br />
+          <input type="number" id="Cell7" name="capacity" /><br />
+          <label for="Cell8">Cell8(in mha):</label><br />
+          <input type="number" id="Cell8" name="capacity" /><br />
+          <label for="Cell9">Cell9(in mha):</label><br />
+          <input type="number" id="Cell9" name="capacity" /><br />
+          <label for="Cell10">Cell10(in mha):</label><br />
+          <input type="number" id="Cell10" name="capacity" /><br /><br />
+          <input
+            type="submit"
+            id="submitYourPackButton"
+            value="Submit your capacities"
+          />
+        </form>
+      </div>
     </div>
     <div class="bottom">contact me</div>
 

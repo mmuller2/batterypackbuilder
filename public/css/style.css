@@ -4,17 +4,27 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
 
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1.9fr repeat(3, 0.7fr);
   grid-template-rows: 1fr 0.5fr repeat(3, 1.3fr) 0.6fr;
   grid-column-gap: 2px;
-  grid-row-gap: 2px;
+  grid-row-gap: 2px; */
+  display: grid;
+  grid-template-columns: 1.9fr 0.7fr repeat(2, 0.7fr);
+  grid-template-rows: 0.5fr 0.25fr 3fr 0.25fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'header header header header'
+    'paragraph paragraph paragraph paragraph'
+    'control pack1 pack2 pack3'
+    'bottom bottom bottom bottom';
 
   font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: rgb(0, 17, 255);
 }
 
-.bottom {
+/* .bottom {
   grid-area: 6 / 1 / 7 / 5;
 }
 .p {
@@ -35,7 +45,7 @@ body {
 }
 .control {
   grid-area: 3 / 1 / 6 / 2;
-}
+} */
 
 li {
   text-align: left;
@@ -96,13 +106,6 @@ a {
   top: 1px;
 }
 
-/* .grid-container {
-  display: inline-grid;
-  grid-template-columns: auto auto auto;
-  background-color: #2196f3;
-  padding: 10px;
-} */
-
 .div1 {
   display: flex;
   justify-content: center;
@@ -110,4 +113,88 @@ a {
   flex-wrap: wrap;
   max-width: 1200px;
   margin: 40px 0;
+}
+
+/* grid layout test 
+
+html
+<div class="container">
+  <div class="header"></div>
+  <div class="paragraph"></div>
+  <div class="bottom"></div>
+  <div class="pack3"></div>
+  <div class="pack2"></div>
+  <div class="pack1"></div>
+  <div class="control">
+    <div class="bestPack"></div>
+    <div class="submitPack"></div>
+    <div class="showAll"></div>
+    <div class="delete"></div>
+  </div>
+</div>
+
+
+css
+.container {  display: grid;
+  grid-template-columns: 1.9fr 0.7fr repeat(2, .7fr);
+  grid-template-rows: .5fr 0.25fr 3fr .25fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "header header header header"
+    "paragraph paragraph paragraph paragraph"
+    "control pack1 pack2 pack3"
+    "bottom bottom bottom bottom";
+}
+*/
+.header {
+  grid-area: header;
+}
+
+.paragraph {
+  grid-area: paragraph;
+}
+
+.bottom {
+  grid-area: bottom;
+}
+
+.pack3 {
+  grid-area: pack3;
+}
+
+.pack2 {
+  grid-area: pack2;
+}
+
+.pack1 {
+  grid-area: pack1;
+}
+
+.control {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2px 2px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'bestPack bestPack showAll'
+    'submitPack submitPack delete';
+  grid-area: control;
+}
+
+.bestPack {
+  grid-area: bestPack;
+}
+
+.submitPack {
+  grid-area: submitPack;
+}
+
+.showAll {
+  grid-area: showAll;
+}
+
+.delete {
+  grid-area: delete;
 }
