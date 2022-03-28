@@ -3,20 +3,39 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
-  /* padding: 4rem 0; */
-  /*background: linear-gradient(to right, rgb(208, 216, 216), rgb(136, 139, 187));*/
-  padding: 100px;
+
+  display: grid;
+  grid-template-columns: 1.9fr repeat(3, 0.7fr);
+  grid-template-rows: 1fr 0.5fr repeat(3, 1.3fr) 0.6fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+
   font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
   color: rgb(0, 17, 255);
 }
 
-h1 {
-  text-align: center;
+.bottom {
+  grid-area: 6 / 1 / 7 / 5;
+}
+.p {
+  grid-area: 2 / 1 / 3 / 5;
 }
 
-/* ol {
-  text-align: left;
-} */
+.pack1 {
+  grid-area: 3 / 2 / 6 / 3;
+}
+.pack2 {
+  grid-area: 3 / 3 / 6 / 4;
+}
+.pack3 {
+  grid-area: 3 / 4 / 6 / 5;
+}
+.header {
+  grid-area: 1 / 1 / 2 / 5;
+}
+.control {
+  grid-area: 3 / 1 / 6 / 2;
+}
 
 li {
   text-align: left;
@@ -28,7 +47,7 @@ a {
 .grid {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   flex-wrap: wrap;
   max-width: 1024px;
 }
@@ -51,6 +70,30 @@ a {
 .card:active {
   color: #171edd;
   border-color: #452fbe;
+}
+
+.myButton {
+  box-shadow: 0px 10px 14px -7px #276873;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 13px 32px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+}
+.myButton:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+.myButton:active {
+  position: relative;
+  top: 1px;
 }
 
 /* .grid-container {
