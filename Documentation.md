@@ -8,5 +8,5 @@ NPM run dev
 
 http://localhost:3000/
 
-Installed pacckages
+Installed packages
 Chris express
