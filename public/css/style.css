@@ -29,7 +29,6 @@ li {
   text-align: center;
   color: rgb(39, 39, 15);
   background-color: rgb(192, 164, 93, 0.5);
-  /* opacity: 0.4; */
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
@@ -40,10 +39,10 @@ li {
 
 /* .card:hover, */
 .card:focus,
-.card:active {
+/* .card:active {
   color: #171edd;
   border-color: #452fbe;
-}
+} */
 
 .myButton {
   box-shadow: 0px 10px 14px -7px #276873;
@@ -70,20 +69,16 @@ li {
 }
 
 .header {
-  grid-area: header;
-  padding: 0.3rem;
-  margin: 0.3rem;
-  text-align: center;
-  color: rgb(39, 39, 15);
   background-color: rgb(192, 164, 93, 0.5);
-  /* opacity: 0.4; */
-  text-decoration: none;
+  color: rgb(39, 39, 15);
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+  margin: 0.2rem;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-
-  max-width: 25rem;
-  max-height: 25rem;
 }
 
 .paragraph {
