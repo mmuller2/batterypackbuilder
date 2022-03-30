@@ -1,12 +1,12 @@
 import pg from 'pg';
 
-// sql server info
+//code below automatically imports user/host/etc from the .env file
 const pool = new pg.Pool({
-  user: 'wcyrnynjfdpyal',
-  host: 'ec2-79-125-93-182.eu-west-1.compute.amazonaws.com',
-  database: 'dcdjvl07s55qvt',
-  password: 'f29514f117399789ae371a1da30d0d7505933857eced3b929e346fe9b1c13223',
-  port: 5432,
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
   ssl: { rejectUnauthorized: false },
 });
 
