@@ -9,36 +9,11 @@
       <div class="header">
         <h1>Battery Pack Builder 1.0</h1>
       </div>
-      <p class="paragraph">
-        Welcome Battery pack builder, please input cell capacities first
-      </p>
 
-      <div class="pack1 card"><ol id="creatingDOMelement"></ol></div>
-      <div class="pack2 card"><ol id="creatingDOMelement2"></ol></div>
-      <div class="pack3 card">stuff</div>
+      <div class="submit">
+        <p>Welcome Battery pack builder, please input cell capacities first</p>
 
-      <div class="control">
-        <div class="showAll">
-          <button id="getPack" class="myButton" type="button">
-            get all your batteries ↻
-          </button>
-        </div>
-
-        <div class="delete">
-          <button id="deletePack" class="myButton" type="button">
-            delete your pack
-          </button>
-        </div>
-
-        <div class="bestPack">
-          <input type="number" id="inputValue" />
-          <br />
-          <br />
-          <button id="three" class="myButton" type="button">
-            Best cells for your pack
-          </button>
-        </div>
-        <div class="submitPack">
+        <div>
           <form id="submitform">
             <label for="Cell1">Cell1(in mha):</label><br />
             <input type="number" id="Cell1" name="capacity" /><br />
@@ -67,8 +42,35 @@
             />
           </form>
         </div>
+        <div>
+          <button id="deletePack" class="myButton" type="button">
+            delete your pack
+          </button>
+        </div>
       </div>
-      <div class="bottom">contact me</div>
+
+      <div class="getAll">
+        <div>
+          <button id="getPack" class="myButton" type="button">
+            get all your batteries ↻
+          </button>
+          <div><ol id="creatingDOMelement"></ol></div>
+        </div>
+      </div>
+
+      <div class="bestPack">
+        <div>
+          <input type="number" id="inputValue" />
+          <br />
+          <br />
+          <button id="three" class="myButton" type="button">
+            Best cells for your pack
+          </button>
+        </div>
+        <div><ol id="creatingDOMelement2"></ol></div>
+      </div>
+
+      <div class="footer">contact me</div>
 
       <script src="./js/front.js"></script>
     </div>

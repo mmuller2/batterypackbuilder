@@ -9,40 +9,62 @@ body {
 
 .mainContainer {
   display: grid;
-  grid-template-columns: 1.9fr 0.7fr 0.7fr 0.7fr;
-  grid-template-rows: 0.25fr 0.25fr 3fr 0.25fr;
-  gap: 0px 0px;
+  grid-auto-rows: 1fr;
+  grid-template-columns: 0.8fr 1.1fr 1.1fr;
+  grid-template-rows: 0.3fr 2.5fr 0.2fr;
+  gap: 20px 20px;
   grid-template-areas:
-    'header header header header'
-    'paragraph paragraph paragraph paragraph'
-    'control pack1 pack2 pack3'
-    'bottom bottom bottom bottom';
+    'header header header'
+    'submit getAll bestPack'
+    'footer footer footer';
 }
-
-li {
-  text-align: left;
-}
-
-.card {
-  margin: 0.5rem;
-  padding: 0.5rem;
-  text-align: center;
-  color: rgb(39, 39, 15);
-  background-color: rgb(192, 164, 93, 0.5);
-  text-decoration: none;
+.header {
+  background-color: rgba(201, 190, 182, 0.5);
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem;
+  margin: 0.1rem;
   border: 1px solid #eaeaea;
   border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 25rem;
-  max-height: 25rem;
+}
+.footer {
+  grid-area: footer;
+  background-color: rgba(201, 190, 182, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+  margin: 0.1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+}
+.submit {
+  grid-area: submit;
+  background-color: rgb(70, 70, 70, 0.6);
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin: 0.1rem;
 }
 
-/* .card:hover, */
-.card:focus,
-/* .card:active {
-  color: #171edd;
-  border-color: #452fbe;
-} */
+.getAll {
+  grid-area: getAll;
+  background-color: rgb(70, 70, 70, 0.6);
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin: 0.1rem;
+}
+.bestPack {
+  grid-area: bestPack;
+  background-color: rgb(70, 70, 70, 0.6);
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin: 0.1rem;
+}
 
 .myButton {
   box-shadow: 0px 10px 14px -7px #276873;
@@ -68,64 +90,27 @@ li {
   top: 1px;
 }
 
-.header {
-  background-color: rgb(192, 164, 93, 0.5);
+li {
+  text-align: left;
+}
+
+.card {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
   color: rgb(39, 39, 15);
-  grid-area: header;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.2rem;
-  margin: 0.2rem;
+  background-color: rgb(192, 164, 93, 0.5);
+  text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 25rem;
+  max-height: 25rem;
 }
 
-.paragraph {
-  grid-area: paragraph;
-  padding: 0.3rem;
-  margin: 0.3rem;
-}
-
-.bottom {
-  grid-area: bottom;
-}
-
-.pack3 {
-  grid-area: pack3;
-}
-
-.pack2 {
-  grid-area: pack2;
-}
-
-.pack1 {
-  grid-area: pack1;
-}
-
-.control {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr 1.1fr;
-  grid-template-rows: 0.4fr 1.6fr;
-  gap: 2px 2px;
-  grid-template-areas:
-    'bestPack bestPack showAll'
-    'submitPack submitPack delete';
-  grid-area: control;
-}
-
-.bestPack {
-  grid-area: bestPack;
-}
-
-.submitPack {
-  grid-area: submitPack;
-}
-
-.showAll {
-  grid-area: showAll;
-}
-
-.delete {
-  grid-area: delete;
-}
+/* .card:hover, */
+.card: focus;
+/* .card:active {
+  color: #171edd;
+  border-color: #452fbe;
+} */
