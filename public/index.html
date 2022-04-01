@@ -11,7 +11,9 @@
       </div>
 
       <div class="submit">
-        <p>Welcome Battery pack builder, please input cell capacities first</p>
+        <div class="card-1">
+          <p>Please input cell capacities first</p>
+        </div>
 
         <div>
           <form id="submitform">
@@ -36,6 +38,7 @@
             <label for="Cell10">Cell10(in mha):</label><br />
             <input type="number" id="Cell10" name="capacity" /><br /><br />
             <input
+              class="myButton"
               type="submit"
               id="submitYourPackButton"
               value="Submit your capacities"
@@ -44,7 +47,7 @@
         </div>
         <div>
           <button id="deletePack" class="myButton" type="button">
-            delete your pack
+            delete your batteries
           </button>
         </div>
       </div>
@@ -60,6 +63,8 @@
 
       <div class="bestPack">
         <div>
+          <label for="inputValue">Input the amount of cells in your pack</label
+          ><br />
           <input type="number" id="inputValue" />
           <br />
           <br />

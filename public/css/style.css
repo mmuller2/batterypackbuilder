@@ -4,7 +4,7 @@ body {
   background-attachment: fixed;
   background-size: 100% 100%;
   font: 16px 'Lucida Grande', Helvetica, Arial, sans-serif;
-  color: rgb(0, 17, 255);
+  color: rgb(253, 253, 253);
 }
 
 .mainContainer {
@@ -90,16 +90,12 @@ body {
   top: 1px;
 }
 
-li {
-  text-align: left;
-}
-
-.card {
+.card-1 {
   margin: 0.5rem;
-  padding: 0.5rem;
+  padding: 0.3rem;
   text-align: center;
-  color: rgb(39, 39, 15);
-  background-color: rgb(192, 164, 93, 0.5);
+  color: rgb(255, 255, 255);
+  background-color: rgba(201, 190, 182, 0.5);
   text-decoration: none;
   border: 1px solid #eaeaea;
   border-radius: 10px;
@@ -109,7 +105,7 @@ li {
 }
 
 /* .card:hover, */
-.card: focus;
+/* .card: focus; */
 /* .card:active {
   color: #171edd;
   border-color: #452fbe;
