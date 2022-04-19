@@ -12,10 +12,10 @@
 
       <div class="submit">
         <div class="card-1">
-          <p>Please input cell capacities first</p>
+          <p class="submitPar">Please input cell capacities first</p>
         </div>
 
-        <div>
+        <div class="form-style">
           <form id="submitform">
             <label for="Cell1">Cell1(in mha):</label><br />
             <input type="number" id="Cell1" name="capacity" /><br />
@@ -45,7 +45,7 @@
             />
           </form>
         </div>
-        <div>
+        <div class="card-1">
           <button id="deletePack" class="myButton" type="button">
             delete your batteries
           </button>
@@ -53,17 +53,19 @@
       </div>
 
       <div class="getAll">
-        <div>
+        <div class="card-1">
           <button id="getPack" class="myButton" type="button">
             get all your batteries ↻
           </button>
-          <div><ol id="creatingDOMelement"></ol></div>
+        </div>
+        <div class="batteryList">
+          <ol id="creatingDOMelement"></ol>
         </div>
       </div>
 
       <div class="bestPack">
-        <div>
-          <label for="inputValue">Input the amount of cells in your pack</label
+        <div class="form-style">
+          <label for="inputValue">Input the amount of cells in your pack:</label
           ><br />
           <input type="number" id="inputValue" />
           <br />
@@ -72,7 +74,7 @@
             Best cells for your pack
           </button>
         </div>
-        <div><ol id="creatingDOMelement2"></ol></div>
+        <div class="batteryList"><ol id="creatingDOMelement2"></ol></div>
       </div>
 
       <div class="footer">contact me</div>
