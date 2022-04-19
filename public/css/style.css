@@ -54,8 +54,8 @@ end font size of returned batteries and submit paragraph */
 /* start forms styling 
 ----------------------- */
 .form-style {
-  font: 95% Arial, Helvetica, sans-serif;
-  max-width: 100%;
+  font: 100% Arial, Helvetica, sans-serif;
+  max-width: 80%;
   margin: 0.3rem;
   padding: 0.4rem;
 }

@@ -66,7 +66,7 @@ router.delete('/', async function (req, res) {
 });
 //
 //
-//POST  to database with new cells
+//POST to database with new cells
 router.post('/', async function (req, res) {
   const newTableBody = req.body;
   //console.log(req.body);
