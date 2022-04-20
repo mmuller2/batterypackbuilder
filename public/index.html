@@ -7,36 +7,42 @@
   <body>
     <div class="mainContainer">
       <div class="header">
-        <h1>Battery Pack Builder 1.0</h1>
+        <h1 class="headerTitle">Battery Pack Builder 1.0</h1>
       </div>
 
       <div class="submit">
         <div class="card-1">
-          <p class="submitPar">Input cell capacities</p>
+          <p class="submitParagraph">Input cell capacities</p>
         </div>
 
         <div class="form-style">
+          <div class="flex-container">
+          <div class="flex-items">
           <form id="submitform">
-            <label for="Cell1">Cell1(in mha):</label><br />
+            <label for="Cell1" class="inputDescriptions">Cell1(in mha):</label><br />
             <input type="number" id="Cell1" name="capacity" /><br />
-            <label for="Cell2">Cell2(in mha):</label><br />
+            <label for="Cell2" class="inputDescriptions">Cell2(in mha):</label><br />
             <input type="number" id="Cell2" name="capacity" /><br />
-            <label for="Cell3">Cell3(in mha):</label><br />
+            <label for="Cell3" class="inputDescriptions">Cell3(in mha):</label><br />
             <input type="number" id="Cell3" name="capacity" /><br />
-            <label for="Cell4">Cell4(in mha):</label><br />
+            <label for="Cell4" class="inputDescriptions">Cell4(in mha):</label><br />
             <input type="number" id="Cell4" name="capacity" /><br />
-            <label for="Cell5">Cell5(in mha):</label><br />
+            <label for="Cell5" class="inputDescriptions">Cell5(in mha):</label><br />
             <input type="number" id="Cell5" name="capacity" /><br />
-            <label for="Cell6">Cell6(in mha):</label><br />
+          </div>
+          <div class="flex-items">
+            <label for="Cell6" class="inputDescriptions">Cell6(in mha):</label><br />
             <input type="number" id="Cell6" name="capacity" /><br />
-            <label for="Cell7">Cell7(in mha):</label><br />
+            <label for="Cell7" class="inputDescriptions">Cell7(in mha):</label><br />
             <input type="number" id="Cell7" name="capacity" /><br />
-            <label for="Cell8">Cell8(in mha):</label><br />
+            <label for="Cell8" class="inputDescriptions">Cell8(in mha):</label><br />
             <input type="number" id="Cell8" name="capacity" /><br />
-            <label for="Cell9">Cell9(in mha):</label><br />
+            <label for="Cell9" class="inputDescriptions">Cell9(in mha):</label><br />
             <input type="number" id="Cell9" name="capacity" /><br />
-            <label for="Cell10">Cell10(in mha):</label><br />
+            <label for="Cell10" class="inputDescriptions">Cell10(in mha):</label><br />
             <input type="number" id="Cell10" name="capacity" /><br /><br />
+          </div>
+        </div>
             <input
               class="myButton"
               type="submit"
@@ -63,11 +69,11 @@
         </div>
       </div>
 
-      <div class="bestPack">
-        <div>
+      <div class="bestPack flex-container">
+        <div class="flex-items">
           <div class="form-style">
-            <label for="inputValue"
-              >Input the number of cells in your pack:</label
+            <label for="inputValue" class="inputDescriptions"
+              >Input the number of cells in your pack</label
             ><br />
             <input type="number" id="inputValue" />
 
@@ -77,10 +83,10 @@
           </div>
           <div class="batteryList"><ol id="creatingDOMelement2"></ol></div>
         </div>
-        <div>
+        <div class="flex-items">
           <div>
             <div class="form-style">
-              <label for="inputValueById"
+              <label for="inputValueById" class="inputDescriptions"
                 >Input the cell number you would like to see</label
               ><br />
               <input type="number" id="inputValueById" />
