@@ -11,19 +11,12 @@ import {
   getAllBatteries,
   getBatteriesById,
   get10Best,
-  get9Best,
-  get8Best,
-  get7Best,
-  get6Best,
-  get5Best,
-  get4Best,
   getBest,
-  get2Best,
-  get1Best,
   deleteTable,
   addTable,
 } from '../models/users.js';
-
+//
+//
 //GET all batteries
 router.get('/', async function (req, res) {
   //Call the function to get the users

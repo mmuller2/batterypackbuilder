@@ -1,5 +1,6 @@
 const url = 'http://localhost:3000';
-
+//
+//
 //DOM manipulation
 const getBatteries = document.querySelector('#getPack');
 const creatingDOMelement = document.querySelector('#creatingDOMelement');
@@ -9,6 +10,9 @@ const inputValue = document.querySelector('#inputValue');
 getBatteries.addEventListener('click', getAll);
 getIdealPack.addEventListener('click', getIdeal);
 //
+/////////////////////////
+
+//
 // creates element space in the DOM (get all batteries)
 function hello(id, capacity) {
   const list = document.createElement('li');
@@ -16,7 +20,9 @@ function hello(id, capacity) {
   creatingDOMelement.appendChild(list);
   console.log('get all batteries button pressed');
 }
-// creates element space in the DOM for get picked pack (24/01/22)
+//
+//
+// creates element space in the DOM for get picked pack
 function pickedSpot(id, capacity) {
   const pickedlist = document.createElement('li');
   pickedlist.innerHTML = `<p>ID:${id}, Capacity:${capacity}</p>`;
@@ -24,23 +30,20 @@ function pickedSpot(id, capacity) {
   console.log('get best pack button pressed');
 }
 //
+//
 //delete your pack events
 const deletePack = document.querySelector('#deletePack');
 deletePack.addEventListener('click', deleteAll);
+//
 //
 //add a new table
 const addTable = document.querySelector('#submitYourPack');
 const form = document.querySelector('#submitform');
 form.addEventListener('submit', handlerForm);
-
+//
+//
 // get picked Pack functions
 async function getIdeal() {
-  // destroy container so it updates pack everytime the button is clicked
-  // const containerDiv = document.querySelector('#div2');
-  // const container = document.querySelector('#creatingDOMelement2');
-  // containerDiv.remove(container);
-  // containerDiv.createElement('ol');
-  //above creates the container
   const response = await fetch(`${url}/batteries/ideal/${inputValue.value}`);
   const { payload } = await response.json();
   console.log(payload);
@@ -49,7 +52,7 @@ async function getIdeal() {
     pickedSpot(input.id, input.capacity);
   });
 }
-
+//
 // get all batteries functions
 //gets the info from /batteries
 async function getAll() {
@@ -61,13 +64,16 @@ async function getAll() {
   });
 }
 
+//
+//
 //delete your pack functions
 async function deleteAll() {
   const response = await fetch(`${url}/batteries`, { method: 'DELETE' })
     .then((response) => response.json())
     .then((data) => (window.location.href = data.redirect));
 }
-
+//
+//
 //Intercept the flowFrom:
 
 function handlerForm(event) {
