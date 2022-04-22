@@ -18,7 +18,7 @@ const deletePack = document.querySelector('#deletePack');
 deletePack.addEventListener('click', deleteAll);
 //
 //
-///////////////////////// Batt by Id ////////////////////////
+///////////////////////// Get Battery by Id ////////////////////////
 // gets the number input for get battery by id
 const inputValueById = document.querySelector('#inputValueById');
 // creates DOM space for battery by id
@@ -44,7 +44,7 @@ function byId(id, capacity) {
   creatingDOMelement3.appendChild(idList);
   console.log('get batteries by id button pressed');
 }
-//////////////////////////
+///////////////////////// End of Get Battery by Id ////////////////////////
 //
 //gets the info from /batteries
 async function getAll() {
