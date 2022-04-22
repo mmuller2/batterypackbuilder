@@ -1,6 +1,6 @@
 import query from '../db/connection.js';
 
-// return all batteries
+// get all batteries
 export async function getAllBatteries() {
   const result = await query(`SELECT * FROM batteries`);
   return result.rows;
@@ -25,7 +25,7 @@ export async function getBest(num) {
   return best3.rows;
 }
 
-// add to table
+// add batteries to table
 export async function addTable(insert) {
   const item = insert.capacity;
   console.log(item);
@@ -36,7 +36,7 @@ export async function addTable(insert) {
   return added.rows;
 }
 
-// erase contents of the table
+// erase all batteries
 export async function deleteTable() {
   const deleted = await query(
     `TRUNCATE TABLE batteries RESTART IDENTITY CASCADE;`

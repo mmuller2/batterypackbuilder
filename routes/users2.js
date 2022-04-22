@@ -42,6 +42,7 @@ router.get('/ideal/:id', async function (req, res) {
 //
 // GET battery by id
 router.get('/:id', async function (req, res) {
+  // deconstructing id
   const { id } = req.params;
   const requestedBattery = await getBatteriesById(id);
   res.json({
@@ -59,6 +60,7 @@ router.delete('/', async function (req, res) {
 });
 //
 //
+
 //POST to database with new cells
 router.post('/', async function (req, res) {
   const newTableBody = req.body;
