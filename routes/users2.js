@@ -14,10 +14,11 @@ import {
   getBest,
   deleteTable,
   addTable,
+  deleteBatteryByID,
 } from '../models/users.js';
 //
 //
-//GET all batteries
+// GET all batteries
 router.get('/', async function (req, res) {
   //Call the function to get the users
   const result = await getAllBatteries();
@@ -26,7 +27,7 @@ router.get('/', async function (req, res) {
 });
 //
 //
-// get picked pack (16.1.22)
+// GET picked pack (number)
 router.get('/ideal/:id', async function (req, res) {
   const { id } = req.params;
   console.log(id);
@@ -53,14 +54,23 @@ router.get('/:id', async function (req, res) {
 });
 //
 //
-// Delete battery database
+// DELETE all batteries from database
 router.delete('/', async function (req, res) {
   const deleted = await deleteTable();
   return res.json({ redirect: 'http://localhost:3000' });
 });
 //
 //
-
+// DELETE battery by id
+router.delete('/:id', async function (req, res) {
+  // without deconstructing id
+  const reqid = Number(req.params.id);
+  const deleted = await deleteBatteryByID(reqid);
+  console.log(reqid);
+  res.json({ message: true, payload: deleted });
+});
+//
+//
 //POST to database with new cells
 router.post('/', async function (req, res) {
   const newTableBody = req.body;
