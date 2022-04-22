@@ -5,21 +5,37 @@
 
 const url = 'http://localhost:3000';
 //
-//DOM manipulation
-const getBatteries = document.querySelector('#getPack');
-const creatingDOMelement = document.querySelector('#creatingDOMelement');
-const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
-const getIdealPack = document.querySelector('#three');
-const inputValue = document.querySelector('#inputValue');
-getBatteries.addEventListener('click', getAll);
-getIdealPack.addEventListener('click', getIdeal);
-//delete your pack events
+///////////////////////// DELETE batteries by IDs////////////////////////////////
+// gets the number input from input field for Delete battery by id
+const DeleteByIdValue = document.querySelector('#DeleteById');
+// event listener and button  to DELETE battery bt id
+const deletePackId = document.querySelector('#deletePackId');
+deletePackId.addEventListener('click', deleteId);
+//
+// DELETE battery by id (interaction with the api)
+async function deleteId() {
+  const response = await fetch(`${url}/batteries/${DeleteByIdValue.value}`, {
+    method: 'DELETE',
+  })
+    .then((response) => response.json())
+    .then((res) => console.log(res));
+}
+//
+///////////////////////// DELETE all batteries/////////////////////////////////
+// event listener selects and button click to DELETE all batteries
 const deletePack = document.querySelector('#deletePack');
 deletePack.addEventListener('click', deleteAll);
 //
+// DELETE all batteries (interaction with the api)
+async function deleteAll() {
+  const response = await fetch(`${url}/batteries`, { method: 'DELETE' })
+    .then((response) => response.json())
+    .then((data) => (window.location.href = data.redirect));
+}
+/////////////////////////// End DELETE all batteries////////////////////////////
 //
-///////////////////////// Get Battery by Id ////////////////////////
-// gets the number input for get battery by id
+///////////////////////// Get Battery by Id ////////////////////////////////////
+// gets the number input from input field for GET battery by id
 const inputValueById = document.querySelector('#inputValueById');
 // creates DOM space for battery by id
 const creatingDOMelement3 = document.querySelector('#creatingDOMelement3');
@@ -27,7 +43,7 @@ const creatingDOMelement3 = document.querySelector('#creatingDOMelement3');
 const getBattId = document.querySelector('#getPackId');
 getBattId.addEventListener('click', getBattById);
 //
-// get battery by id
+// GET battery by id (interaction with the api)
 async function getBattById() {
   const response = await fetch(`${url}/batteries/${inputValueById.value}`);
   const { payload } = await response.json();
@@ -44,9 +60,16 @@ function byId(id, capacity) {
   creatingDOMelement3.appendChild(idList);
   console.log('get batteries by id button pressed');
 }
-///////////////////////// End of Get Battery by Id ////////////////////////
+///////////////////////// End of Get Battery by Id //////////////////////////////
 //
-//gets the info from /batteries
+///////////////////////// Get all Batteries /////////////////////////////////////
+// creates DOM space for GET all batteries
+const creatingDOMelement = document.querySelector('#creatingDOMelement');
+// event listener and button  to GET all batteries
+const getBatteries = document.querySelector('#getPack');
+getBatteries.addEventListener('click', getAll);
+//
+//GET all batteries (interaction with api)
 async function getAll() {
   const response = await fetch(`${url}/batteries`);
   const { payload } = await response.json();
@@ -63,8 +86,18 @@ function hello(id, capacity) {
   creatingDOMelement.appendChild(list);
   console.log('get all batteries button pressed');
 }
+///////////////////////// End of Get all Batteries ///////////////////////////////
 //
-// get picked Pack functions
+/////////////////////////// Get picked pack (size) ///////////////////////////////
+// gets the number input from input field for GET picked pack
+const inputValue = document.querySelector('#inputValue');
+// creates DOM space for GET picked pack
+const creatingDOMelement2 = document.querySelector('#creatingDOMelement2');
+// event listener and button  to GET picked pack
+const getIdealPack = document.querySelector('#three');
+getIdealPack.addEventListener('click', getIdeal);
+//
+// GET picked battery pack (interaction with the api)
 async function getIdeal() {
   const response = await fetch(`${url}/batteries/ideal/${inputValue.value}`);
   const { payload } = await response.json();
@@ -82,20 +115,16 @@ function pickedSpot(id, capacity) {
   creatingDOMelement2.appendChild(pickedlist);
   console.log('get best pack button pressed');
 }
+/////////////////////////End of Get picked pack (size) ////////////////////////////
 //
-//add a new table
+///////////////////////////POST new batteries /////////////////////////////////////
 const addTable = document.querySelector('#submitYourPack');
+// event listener and button  to DELETE all batteries
 const form = document.querySelector('#submitform');
 form.addEventListener('submit', handlerForm);
 //
-//delete your pack functions
-async function deleteAll() {
-  const response = await fetch(`${url}/batteries`, { method: 'DELETE' })
-    .then((response) => response.json())
-    .then((data) => (window.location.href = data.redirect));
-}
-//
-//Intercept the flowFrom:
+//Intercept the flowFrom form
+// intercept if form is empty then return nothing, else submit the data(post)
 function handlerForm(event) {
   event.preventDefault();
   const data = new FormData(event.target);
@@ -112,7 +141,7 @@ function handlerForm(event) {
   console.log({ value });
 }
 //
-//CREATE new batteries
+//POST new batteries (interaction with api)
 async function fetchCreate(body) {
   const fetchResponse = await fetch(`${url}/batteries`, {
     method: 'POST',
@@ -126,3 +155,4 @@ async function fetchCreate(body) {
   console.log(response);
   return response;
 }
+/////////////////////////// End of POST new batteries /////////////////////////////
