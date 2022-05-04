@@ -8,6 +8,7 @@
     "dbcreatetable": "node -r dotenv/config ./db/scripts/users/createTable.js",
     "dbpopulatetable": "node -r dotenv/config ./db/scripts/users/populateTable.js",
     "dbdeleteTable": "node -r dotenv/config ./db/scripts/users/deleteTable.js",
+    "dbdropTable": "node -r dotenv/config ./db/scripts/users/droptable.js",
     "dev": "nodemon -r dotenv/config ./bin/www.js"
   },
   "dependencies": {
