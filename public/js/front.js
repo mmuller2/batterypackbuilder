@@ -12,6 +12,8 @@ const DeleteByIdValue = document.querySelector('#DeleteById');
 const deletePackId = document.querySelector('#deletePackId');
 deletePackId.addEventListener('click', deleteId);
 //
+////
+/////
 // DELETE battery by id (interaction with the api)
 async function deleteId() {
   const response = await fetch(`${url}/batteries/${DeleteByIdValue.value}`, {
@@ -21,6 +23,8 @@ async function deleteId() {
     .then((res) => console.log(res));
 }
 //
+////
+//////
 ///////////////////////// DELETE all batteries/////////////////////////////////
 // event listener selects and button click to DELETE all batteries
 const deletePack = document.querySelector('#deletePack');
@@ -34,6 +38,8 @@ async function deleteAll() {
 }
 /////////////////////////// End DELETE all batteries////////////////////////////
 //
+////
+//////
 ///////////////////////// Get Battery by Id ////////////////////////////////////
 // gets the number input from input field for GET battery by id
 const inputValueById = document.querySelector('#inputValueById');
